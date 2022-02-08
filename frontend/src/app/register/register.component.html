@@ -1,0 +1,96 @@
+<div class="col-md-6 offset-md-3 mt-5">
+    <div class="card">
+        <h4 class="card-header">Registrazione</h4>
+        <div class="card-body">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">Inserisci il nome</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="surname">Cognome</label>
+                    <input type="text" formControlName="surname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.surname.errors }" />
+                    <div *ngIf="submitted && f.surname.errors" class="invalid-feedback">
+                        <div *ngIf="f.surname.errors.required">Inserisci il cognome</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Sesso</label>
+                    <select formControlName="gender" class="form-control form-select" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
+                        <option value="null" disabled>Seleziona il sesso</option>
+                        <option *ngFor="let g of genders" [ngValue]="g.id">{{g.label}}</option>
+                     </select>
+                    <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+                        <div *ngIf="f.gender.errors.required">Inserisci il sesso</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="birthdate">Data di nascita</label>
+                    <input type="date" formControlName="birthdate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.birthdate.errors }" />
+                    <div *ngIf="submitted && f.birthdate.errors" class="invalid-feedback">
+                        <div *ngIf="f.birthdate.errors.required">Inserisci la data di nascita</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Inserisci un'e-mail</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="job">Mansione</label>
+                    <select formControlName="job" class="form-control form-select" [ngClass]="{ 'is-invalid': submitted && f.job.errors }">
+                        <option value="null" disabled>Seleziona la mansione</option>
+                        <option *ngFor="let j of jobs" [ngValue]="j.id">{{j.label}}</option>
+                     </select>
+                    <div *ngIf="submitted && f.job.errors" class="invalid-feedback">
+                        <div *ngIf="f.job.errors.required">Inserisci la mansione</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="desk">Scrivania</label>
+                    <select formControlName="desk" class="form-control form-select" [ngClass]="{ 'is-invalid': submitted && f.desk.errors }">
+                        <option value="null" disabled>Seleziona la scrivania</option>
+                        <option *ngFor="let d of desksData" [ngValue]="d.idDesk">{{"id: " + d.idDesk + " - x: " + d.x + " - y: " + d.yPosition + " - jolly: " + d.jolly + " - area: " + d.idDeskArea}}</option>
+                     </select>
+                    <div *ngIf="submitted && f.desk.errors" class="invalid-feedback">
+                        <div *ngIf="f.desk.errors.required">Inserisci la scrivania</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Inserisci una password</div>
+                        <div *ngIf="f.password.errors.pattern"> Almeno un numero, una maiuscola, una minuscola, 6 caratteri.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Conferma password</label>
+                    <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" pattern="{{ f.password.value }}"/>
+                    <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                        <div *ngIf="f.confirmPassword.errors.pattern">La password non corrisponde.</div>
+                        <div *ngIf="f.confirmPassword.errors.required">Inserisci una password.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Registrati
+                    </button>
+                    <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                </div>
+            </form>
+            <div>
+                <a class="text-center nav-item nav-link" routerLink="/login">Hai un account? Accedi</a>
+            </div>
+        </div>
+    </div>
+</div>

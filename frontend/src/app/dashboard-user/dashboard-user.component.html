@@ -1,0 +1,71 @@
+<div class="col-md-6 offset-md-3 mt-5">
+    <div *ngIf="currentStep === 1" class="card">
+        <h4 class="card-header">Scegli una data</h4>
+        <div class="card-body">
+            <form [formGroup]="firstStepForm" (ngSubmit)="firstStepSubmit()">
+                <div class="form-group">
+                    <label for="date">Data</label>
+                    <select type="text" formControlName="date" id="date" class="form-control form-select" [ngClass]="{ 'is-invalid': submitted && f.date.errors }" >
+                        <option value="null" disabled>Seleziona la data</option>
+                        <option *ngFor="let d of dates; let i = index" [ngValue]="d">{{d}}</option>
+                    </select>
+                    <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+                        <div *ngIf="f.date.errors.required">Seleziona una data</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Richiedi la lista di scrivanie prenotabili 
+                    </button>
+                    <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div *ngIf="currentStep === 2" class="card">
+        <h4 class="card-header">Prenota per il {{selectedDate}}</h4>
+        <div class="card-body">
+            <form [formGroup]="secondStepForm" (ngSubmit)="secondStepSubmit()">
+                <div class="form-group">
+                    <p>Scrivania proprietaria: {{ownerDesk && ("id: " + ownerDesk.idDesk + " - x: " + ownerDesk.x + " - y: " + ownerDesk.yPosition + " - jolly: " + (ownerDesk.jolly ? "yes" : "no") + " - area: " + ownerDesk.idDeskArea)}}</p>
+                    <p>Posti prenotati:</p>
+                    <ul>
+                        <li *ngFor="let d of reservedDesks; let i = index">{{"id: " + d.idDesk + " - x: " + d.x + " - y: " + d.yPosition + " - jolly: " + (d.jolly ? "yes" : "no") + " - area: " + d.idDeskArea}}</li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <p>Numero dipendenti con prenotazione per mansione e isola:</p>
+                    <ul>
+                        <li *ngFor="let n of numEmployees; let i = index">{{"idDeskArea: " + n.idDeskArea + " - lavoro: " + n.job + " - numero: " + n.numEmployees}}</li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label for="desk">Posti prenotabili</label>
+                    <select type="text" formControlName="desk" id="desk" class="form-control form-select" [ngClass]="{ 'is-invalid': submitted && secondStepF.desk.errors }" >
+                        <option value="null" disabled>Seleziona la scrivania</option>
+                        <option *ngFor="let d of desksData; let i = index" [ngValue]="d.idDesk">{{"id: " + d.idDesk + " - x: " + d.x + " - y: " + d.yPosition + " - jolly: " + (d.jolly ? "yes" : "no") + " - area: " + d.idDeskArea}}</option>
+                    </select>
+                    <div *ngIf="submitted && secondStepF.desk.errors" class="invalid-feedback">
+                        <div *ngIf="secondStepF.desk.errors.required">Seleziona una scrivania</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Prenota un posto
+                    </button>
+                    <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <h4 class="card-header">Prenotazioni personali</h4>
+        <div class="card-body">
+            <ul>
+                <li *ngFor="let r of personalReservations; let i = index">{{"Id scrivania: "+r.idDesk + " - data prenotazione: " + r.reservationDate + " - timestamp: " + r.timestamp + " - id dipendente: " + r.idEmployee}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

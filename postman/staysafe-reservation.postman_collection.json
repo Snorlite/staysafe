@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "65a7ca61-4d29-4ecb-88f6-3ceca39c4d64",
+		"name": "staysafe-reservation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get reservations",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZEVtcGxveWVlIjoxOCwibmFtZSI6IkFuZHJlYSIsInN1cm5hbWUiOiJCZXR0aSIsImdlbmRlciI6Im1hbGUiLCJiaXJ0aGRhdGUiOiIxOTk4LTAxLTI1VDIzOjAwOjAwLjAwMFoiLCJlbWFpbCI6ImFuZHJlYS5iZXR0aTEwQHN0dWRpby51bmliby5pdCIsInBhc3N3b3JkIjoiJDJhJDEwJGxUd0ljU2N1MndKZFlRVGltMm9xamVNNGlHVjlVbW5tVFRTOTZwWmVnVmduRGNCemZDd2d5Iiwiam9iIjoiU29mdHdhcmVfRGV2ZWxvcGVyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQzMzg3OTA5LCJleHAiOjE2NDMzOTE1MDl9.VKcsT-B4pRLu8hhT101pa24Owmuem1nuhwv4nKfEXkY"
+					}
+				],
+				"url": {
+					"raw": "localhost:4000/reservations",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get reservation",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZEVtcGxveWVlIjoxNywiTmFtZSI6IkFuZHJlYSIsIlN1cm5hbWUiOiJCZXR0aSIsIkdlbmRlciI6Im1hbGUiLCJCaXJ0aGRhdGUiOiIxOTk4LTAxLTI1VDIzOjAwOjAwLjAwMFoiLCJFbWFpbCI6ImFuZHJlYS5iMzNldHRpMTBAc3R1ZGlvLnVuaWJvLml0IiwiUGFzc3dvcmQiOiIkMmEkMTAkcVRBNVNmdlhTZldGZmlqdFNvVzV6ZTBXN3lWZEV0SDVPbXNYcVl6U1A1bi4xTEFOZU5GR3kiLCJKb2IiOiJTb2Z0d2FyZV9EZXZlbG9wZXIiLCJSb2xlIjoiYWRtaW4iLCJpYXQiOjE2NDMzMjQ5ODMsImV4cCI6MTY0MzMyODU4M30.yPGuvHOiukJGInJZYjQUibc21vmSQC-oz_AUcl-hoEc"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_desk\": 1,\r\n    \"reservation_date\": \"2022-01-12\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:4000/reservations/id",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"reservations",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reservation create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZEVtcGxveWVlIjoxOSwibmFtZSI6IlJvYmVydG8iLCJzdXJuYW1lIjoiQmV0dGkiLCJnZW5kZXIiOiJmZW1hbGUiLCJiaXJ0aGRhdGUiOiIyMDIyLTAxLTI3VDIzOjAwOjAwLjAwMFoiLCJlbWFpbCI6InNub3IuYmV0dGlAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmEkMTAkT25xY2hKQjlBZ08zSU85NS94MDd4dTJKZTJqVm1rOVVLMjlBLnhXdHRITG5aMFFPcFc1MnkiLCJqb2IiOiJTb2Z0d2FyZV9EZXZlbG9wZXIiLCJyb2xlIjoidXNlciIsImlkRGVzayI6MywiaWF0IjoxNjQzNTY1NzA3LCJleHAiOjE2NDM1NjkzMDd9.od2KicSCAbtDhrY0835epYPBpHRcU-FS-HPe7uqbfxE"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_desk\": 3,\r\n    \"reservation_date\": \"2022-02-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/reservations",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reservation delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZEVtcGxveWVlIjoxOCwibmFtZSI6IkFuZHJlYSIsInN1cm5hbWUiOiJCZXR0aSIsImdlbmRlciI6Im1hbGUiLCJiaXJ0aGRhdGUiOiIxOTk4LTAxLTI1VDIzOjAwOjAwLjAwMFoiLCJlbWFpbCI6ImFuZHJlYS5iZXR0aTEwQHN0dWRpby51bmliby5pdCIsInBhc3N3b3JkIjoiJDJhJDEwJGxUd0ljU2N1MndKZFlRVGltMm9xamVNNGlHVjlVbW5tVFRTOTZwWmVnVmduRGNCemZDd2d5Iiwiam9iIjoiU29mdHdhcmVfRGV2ZWxvcGVyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQzMzg5NjI4LCJleHAiOjE2NDMzOTMyMjh9.fs5UvEDAT0iVkABlcRAJZQINzGT2YEcwG1C8e24d0T8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_desk\": 1,\r\n    \"reservation_date\": \"2022-01-30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/reservations",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"reservations"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

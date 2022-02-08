@@ -1,0 +1,9 @@
+﻿<div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+<header *ngIf="currentUser">
+    <div class="container my-2 text-center">
+        <h1>Benvenuto {{currentUser.name + " " + currentUser.surname}}!</h1>
+    </div>
+</header>
+<div>
+    <dashboard-user></dashboard-user>
+</div>

@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "ff0826fe-bc0a-452b-bb9d-00dd979eff5a",
+		"name": "staysafe-user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_email\": \"andrea.betti10@studio.unibo.it\",\r\n    \"user_password\": \"passwordSicura\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZEVtcGxveWVlIjoxOCwibmFtZSI6IkFuZHJlYSIsInN1cm5hbWUiOiJCZXR0aSIsImdlbmRlciI6Im1hbGUiLCJiaXJ0aGRhdGUiOiIxOTk4LTAxLTI1VDIzOjAwOjAwLjAwMFoiLCJlbWFpbCI6ImFuZHJlYS5iZXR0aTEwQHN0dWRpby51bmliby5pdCIsInBhc3N3b3JkIjoiJDJhJDEwJGxUd0ljU2N1MndKZFlRVGltMm9xamVNNGlHVjlVbW5tVFRTOTZwWmVnVmduRGNCemZDd2d5Iiwiam9iIjoiU29mdHdhcmVfRGV2ZWxvcGVyIiwicm9sZSI6ImFkbWluIiwiaWREZXNrIjoyLCJpYXQiOjE2NDM1NTgwOTMsImV4cCI6MTY0MzU2MTY5M30.huhR5-upZB3NaAC-hg4K8uqZaVF9GoE73LIC-5p8kaw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:4000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User register admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_email\": \"andrea.betti10@studio.unibo.it\",\r\n    \"user_username\": \"abetti\",\r\n    \"user_name\": \"Andrea\",\r\n    \"user_surname\": \"Betti\",\r\n    \"user_gender\": \"male\",\r\n    \"user_password\": \"passwordSicura\",\r\n    \"user_birthDate\": \"1998-01-26\",\r\n    \"user_role\": \"admin\",\r\n    \"user_job\": \"Software_Developer\",\r\n    \"user_desk\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/users/register",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get me",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZEVtcGxveWVlIjoxOCwibmFtZSI6IkFuZHJlYSIsInN1cm5hbWUiOiJCZXR0aSIsImdlbmRlciI6Im1hbGUiLCJiaXJ0aGRhdGUiOiIxOTk4LTAxLTI1VDIzOjAwOjAwLjAwMFoiLCJlbWFpbCI6ImFuZHJlYS5iZXR0aTEwQHN0dWRpby51bmliby5pdCIsInBhc3N3b3JkIjoiJDJhJDEwJGxUd0ljU2N1MndKZFlRVGltMm9xamVNNGlHVjlVbW5tVFRTOTZwWmVnVmduRGNCemZDd2d5Iiwiam9iIjoiU29mdHdhcmVfRGV2ZWxvcGVyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQzMzY4NzIxLCJleHAiOjE2NDMzNzIzMjF9.rBxOm2ecQpe6k5L3FTKxqkFTQ7s-sA3mOKWjMdyURRk"
+					}
+				],
+				"url": {
+					"raw": "localhost:4000/users/me",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

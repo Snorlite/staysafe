@@ -1,0 +1,9 @@
+<div class="col-md-6 offset-md-3 mt-5">
+    <h4 class="card-header">Prenotazioni</h4>
+    <div class="card-body">
+        <ul>
+            <li *ngFor="let r of reservations; let i = index">{{"Id scrivania: "+r.idDesk + " - data prenotazione: " + r.reservationDate + " - timestamp: " + r.timestamp + " - id dipendente: " + r.idEmployee}}</li>
+        </ul>
+    </div>
+    
+</div>

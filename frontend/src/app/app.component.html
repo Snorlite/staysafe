@@ -1,0 +1,23 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div class="navbar-nav">
+            <a class="navbar-brand" href="#">StaySafe</a>
+            <a class="nav-item nav-link" *ngIf="currentUser" routerLink="/">Home</a>
+            <a class="nav-item nav-link" *ngIf="currentUser && currentUser.role == 'admin'" routerLink="/reservations">Prenotazioni</a>
+            <a class="nav-item nav-link" *ngIf="currentUser" (click)="logout()">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<!-- main app container -->
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
+<!-- credits -->
+<div class="text-center mt-4">
+    <p>
+        
+    </p>
+</div>

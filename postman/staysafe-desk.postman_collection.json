@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "128c24f8-3a25-4f90-93fc-71bb2bf179be",
+		"name": "staysafe-desk",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get desks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZEVtcGxveWVlIjoxOCwibmFtZSI6IkFuZHJlYSIsInN1cm5hbWUiOiJCZXR0aSIsImdlbmRlciI6Im1hbGUiLCJiaXJ0aGRhdGUiOiIxOTk4LTAxLTI1VDIzOjAwOjAwLjAwMFoiLCJlbWFpbCI6ImFuZHJlYS5iZXR0aTEwQHN0dWRpby51bmliby5pdCIsInBhc3N3b3JkIjoiJDJhJDEwJGxUd0ljU2N1MndKZFlRVGltMm9xamVNNGlHVjlVbW5tVFRTOTZwWmVnVmduRGNCemZDd2d5Iiwiam9iIjoiU29mdHdhcmVfRGV2ZWxvcGVyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQzMzc5NzI3LCJleHAiOjE2NDMzODMzMjd9.JB4KZY6CaN8yfxEy5isNEBlriLmHqVd_GBMaro9bNAs"
+					}
+				],
+				"url": {
+					"raw": "localhost:4000/desks",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"desks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ownable desks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": ""
+					}
+				],
+				"url": {
+					"raw": "localhost:4000/desks/ownables",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"desks",
+						"ownables"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get reserved desks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:4000/desks/reserved/2022-01-12",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"desks",
+						"reserved",
+						"2022-01-12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get reservable desks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZEVtcGxveWVlIjoxOCwibmFtZSI6IkFuZHJlYSIsInN1cm5hbWUiOiJCZXR0aSIsImdlbmRlciI6Im1hbGUiLCJiaXJ0aGRhdGUiOiIxOTk4LTAxLTI1VDIzOjAwOjAwLjAwMFoiLCJlbWFpbCI6ImFuZHJlYS5iZXR0aTEwQHN0dWRpby51bmliby5pdCIsInBhc3N3b3JkIjoiJDJhJDEwJGxUd0ljU2N1MndKZFlRVGltMm9xamVNNGlHVjlVbW5tVFRTOTZwWmVnVmduRGNCemZDd2d5Iiwiam9iIjoiU29mdHdhcmVfRGV2ZWxvcGVyIiwicm9sZSI6ImFkbWluIiwiaWREZXNrIjoyLCJpYXQiOjE2NDM1MDY3NTYsImV4cCI6MTY0MzUxMDM1Nn0.AD7kUKyrBd_pC4oMy3QUQCwwCht3mdKSJRHbdU_XWFY"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:4000/desks/reservable/2022-03-03",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"desks",
+						"reservable",
+						"2022-03-03"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get desk",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZEVtcGxveWVlIjoxNywiTmFtZSI6IkFuZHJlYSIsIlN1cm5hbWUiOiJCZXR0aSIsIkdlbmRlciI6Im1hbGUiLCJCaXJ0aGRhdGUiOiIxOTk4LTAxLTI1VDIzOjAwOjAwLjAwMFoiLCJFbWFpbCI6ImFuZHJlYS5iMzNldHRpMTBAc3R1ZGlvLnVuaWJvLml0IiwiUGFzc3dvcmQiOiIkMmEkMTAkcVRBNVNmdlhTZldGZmlqdFNvVzV6ZTBXN3lWZEV0SDVPbXNYcVl6U1A1bi4xTEFOZU5GR3kiLCJKb2IiOiJTb2Z0d2FyZV9EZXZlbG9wZXIiLCJSb2xlIjoiYWRtaW4iLCJpYXQiOjE2NDMzMjQ5ODMsImV4cCI6MTY0MzMyODU4M30.yPGuvHOiukJGInJZYjQUibc21vmSQC-oz_AUcl-hoEc"
+					}
+				],
+				"url": {
+					"raw": "localhost:4000/desks/1",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"desks",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Desk create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZEVtcGxveWVlIjoxOCwibmFtZSI6IkFuZHJlYSIsInN1cm5hbWUiOiJCZXR0aSIsImdlbmRlciI6Im1hbGUiLCJiaXJ0aGRhdGUiOiIxOTk4LTAxLTI1VDIzOjAwOjAwLjAwMFoiLCJlbWFpbCI6ImFuZHJlYS5iZXR0aTEwQHN0dWRpby51bmliby5pdCIsInBhc3N3b3JkIjoiJDJhJDEwJGxUd0ljU2N1MndKZFlRVGltMm9xamVNNGlHVjlVbW5tVFRTOTZwWmVnVmduRGNCemZDd2d5Iiwiam9iIjoiU29mdHdhcmVfRGV2ZWxvcGVyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQzMzg3Njg3LCJleHAiOjE2NDMzOTEyODd9.56b4xOnq4_8dYTWbfzx3gk0tZITpJ0J9cIp5Gm2OM3o"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"desk_x\": 1,\r\n    \"desk_y\": \"down\",\r\n    \"desk_jolly\": 0,\r\n    \"desk_area\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/desks",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"desks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Desk delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZEVtcGxveWVlIjoxOCwibmFtZSI6IkFuZHJlYSIsInN1cm5hbWUiOiJCZXR0aSIsImdlbmRlciI6Im1hbGUiLCJiaXJ0aGRhdGUiOiIxOTk4LTAxLTI1VDIzOjAwOjAwLjAwMFoiLCJlbWFpbCI6ImFuZHJlYS5iZXR0aTEwQHN0dWRpby51bmliby5pdCIsInBhc3N3b3JkIjoiJDJhJDEwJGxUd0ljU2N1MndKZFlRVGltMm9xamVNNGlHVjlVbW5tVFRTOTZwWmVnVmduRGNCemZDd2d5Iiwiam9iIjoiU29mdHdhcmVfRGV2ZWxvcGVyIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQzMzg3Njg3LCJleHAiOjE2NDMzOTEyODd9.56b4xOnq4_8dYTWbfzx3gk0tZITpJ0J9cIp5Gm2OM3o"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/desks/3",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"desks",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
